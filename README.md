@@ -16,8 +16,12 @@ El usuario se encontrará en pantalla con una pregunta elegida al azar, y una se
 
 ## Hardware
 
-PC, Arduino UNO, cableado, soporte físico de la "bomba".
+PC, Arduino UNO, cableado, soporte físico de la "bomba"
 
 ## Software
 
 Programación a través del software de Arduino.
+
+## Sensores y actuadores 
+En principio, la base del proyecto será una placa electrónica de hardware para establecer las conexiones entre el microcontrolador y diferentes sensores y actuadores via diferentes cables. Una placa de circuito impreso llamada Arduino uno va a estar conectada al ordenador mediante unos cables que permitirán la transferencia de datos (en nuestro caso preguntas con posibles respuestas) a la pantalla. La placa deberá ser capaz de detectar la conexión a diferentes cables y recibir señales cuando uno se conecta o se desconecta de la última. El sistema se comunicará con el ordenador para poder cambiar preguntas una tras otra sucesivamente. 
+El ordenador servirá para ver si el usuario ha desconectado el cable correcto de la placa, analizaría la señal y dependiendo de la señal recibida actuaría una "bomba" o no.
