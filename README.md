@@ -23,14 +23,15 @@ PC, Arduino UNO, cableado, soporte físico de la "bomba"
 Programación a través del software de Arduino.
 
 ## Sensores y actuadores 
-En principio, la base del proyecto será una placa electrónica de hardware para establecer las conexiones entre el microcontrolador y diferentes sensores y actuadores via diferentes cables. Una placa de circuito impreso llamada Arduino uno va a estar conectada al ordenador mediante unos cables que permitirán la transferencia de datos (en nuestro caso preguntas con posibles respuestas) a la pantalla. La placa deberá ser capaz de detectar la conexión a diferentes cables y recibir señales cuando uno se conecta o se desconecta de la última. El sistema se comunicará con el ordenador para poder cambiar preguntas una tras otra sucesivamente. 
+En principio, la base del proyecto será una placa electrónica de hardware para establecer las conexiones entre el microcontrolador y diferentes sensores y actuadores via diferentes cables. Una placa de circuito impreso llamada Arduino UNO va a estar conectada al ordenador mediante unos cables que permitirán la transferencia de datos (en nuestro caso preguntas con posibles respuestas) a la pantalla. La placa deberá ser capaz de detectar la conexión a diferentes cables y recibir señales cuando uno se conecta o se desconecta de la última. El sistema se comunicará con el ordenador para poder cambiar preguntas una tras otra sucesivamente. 
 El ordenador servirá para ver si el usuario ha desconectado el cable correcto de la placa, analizaría la señal y dependiendo de la señal recibida actuaría una "bomba" o no.
 
 ## Funciones principales
 
 Las principales funciones que vamos a utilizar son:
 
-El funcionamiento de función ¨Hacer pregunta_N¨:(En este caso N es el número de la pregunta que se va a hacer) Dentro de esta función va a estar un simple comando printf que señalaría una de las preguntas ya hechas de antemano y randomizadas con la función rand(). Cada pregunta recibira una seria de respuestas leidas por el teclado. Una vez obtenida la opción del usuario (que no podrá ser distinta de las que salen en las opciones, para esto se empleará ¨switch¨ con la opción ¨default¨ y un bucle ¨do-while¨) el programa procederá a analizar la señal.
-Habrían varias funciones de este tipo que tendrían asociadas las respuestas posibles. Estas funciones estarían devolverían a la función peincipal una señal binaria donde 1 es explotar y 0 no explotar. Está señal es recibida por la siguiente función llamada ¨Explosión¨.
+El funcionamiento de función _¨Hacer pregunta_N¨_: (En este caso N es el número de la pregunta que se va a hacer). Dentro de esta función, va a estar un simple comando _printf_ que señalará una de las preguntas de la base de datos randomizada con la función _rand()_. Cada pregunta recibirá una serie de respuestas leídas por el teclado. Una vez obtenida la opción del usuario, (que no podrá ser distinta de las que salen en las opciones; para esto se empleará _¨switch¨_ con la opción _¨default¨_ y un bucle _¨do-while¨_) el programa procederá a analizar la señal.
 
-El funcionamiento de la función ¨Explosión¨: Todas las opciones menos una van a estar asociadas a la opción ¨incorrecta¨. Todas la opciones menos una mandarían la señal a la ¨Bomba¨ que a su vez explotaría.
+Habrán varias funciones de este tipo, que tendrán asociadas las posibles respuestas. Estas funciones devolverán a la función principal una señal binaria, donde 1 es explotar y 0 no explotar. Está señal será recibida por una función llamada _¨Explosión¨_.
+
+- **Funcionamiento de la función ¨Explosión¨**: Todas las opciones menos una van a estar asociadas a la opción ¨incorrecta¨. Todas la opciones menos una (la incorrecta) mandarán la señal a la ¨Bomba¨ para que explote.
