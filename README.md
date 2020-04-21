@@ -30,7 +30,7 @@ El ordenador servirá para ver si el usuario ha desconectado el cable correcto d
 
 Las principales funciones que vamos a utilizar son:
 
-El funcionamiento de función _¨Hacer pregunta_N¨_: (En este caso N es el número de la pregunta que se va a hacer). Dentro de esta función, va a estar un simple comando _printf_ que señalará una de las preguntas de la base de datos randomizada con la función _rand()_. Cada pregunta recibirá una serie de respuestas leídas por el teclado. Una vez obtenida la opción del usuario, (que no podrá ser distinta de las que salen en las opciones; para esto se empleará _¨switch¨_ con la opción _¨default¨_ y un bucle _¨do-while¨_) el programa procederá a analizar la señal.
+Función _¨Hacer pregunta_N¨_: (En este caso N es el número de la pregunta que se va a hacer). Dentro de esta función, va a estar un simple comando _printf_ que señalará una de las preguntas de la base de datos randomizada con la función _rand()_. Cada pregunta recibirá una serie de respuestas leídas por el teclado. Una vez obtenida la opción del usuario, (que no podrá ser distinta de las que salen en las opciones; para esto se empleará _¨switch¨_ con la opción _¨default¨_ y un bucle _¨do-while¨_) el programa procederá a analizar la señal.
 
 Habrán varias funciones de este tipo, que tendrán asociadas las posibles respuestas. Estas funciones devolverán a la función principal una señal binaria, donde 1 es explotar y 0 no explotar. Está señal será recibida por una función llamada _¨Explosión¨_.
 
