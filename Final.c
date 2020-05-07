@@ -42,38 +42,56 @@ int main(void)
 		{
 			break;
 		}
-		else
+		
+		printf ("\n\n\n<<<====================>>>\n\n\n");
+		
+	//Segunda pregunta
+	
+	    printf ("Segunda pregunta: \n");
+	    estado_explosion = imprimir_pregunta(&bote_funcion_principal); //Se obtiene el estado de la explosion de la bomba 
+	    
+		if (estado_explosion == 1) //Con esta sentencia se sale del bucle do-While; La bomba explota
 		{
-			printf ("%d",estado_explosion);
+			break;
 		}
+		
+		printf ("\n\n\n<<<====================>>>\n\n\n");
+		
+	//Tercera pregunta
+	
+	    printf ("Tercera pregunta: \n");
+	    estado_explosion = imprimir_pregunta(&bote_funcion_principal); //Se obtiene el estado de la explosion de la bomba 
 	    
+		if (estado_explosion == 1) //Con esta sentencia se sale del bucle do-While; La bomba explota
+		{
+			break;
+		}
+		
+		printf ("\n\n\n<<<====================>>>\n\n\n");
+		
+	//Cuarta pregunta
+	
+	    printf ("Cuarta pregunta: \n");
+	    estado_explosion = imprimir_pregunta(&bote_funcion_principal); //Se obtiene el estado de la explosion de la bomba 
 	    
-	    
-	    
-	    
-	    
+		if (estado_explosion == 1) //Con esta sentencia se sale del bucle do-While; La bomba explota
+		{
+			break;
+		}
+		
+		printf ("\n\n\n<<<====================>>>\n\n\n");
 	    
 	    
 	    printf("\n\nEl equipo %s se ha llevado un bote final de %d euros.\n",nombre_del_grupo,bote_funcion_principal);
 	    
 		printf("\nVolver a jugar?\n 1- Si.  2- No.\n");
-	    scanf("%d",&seguir_jugando); 
+		
+	    scanf("%d",&seguir_jugando);
+		 
 	} while(seguir_jugando==1);
 	
 	return 0;
-	
 }
-
-	
-	
-	
-	
-	
-	
-	
-	
-
-
 
 
 int imprimir_pregunta (int *bote_paso_por_ref)
@@ -695,3 +713,7 @@ int imprimir_pregunta (int *bote_paso_por_ref)
 	return (estado_explosion_funcion);
 	
 }
+
+
+
+
