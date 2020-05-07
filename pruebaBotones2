@@ -1,0 +1,127 @@
+#define LED 3
+#define LLAVE 2
+
+#define LED2 5
+#define LLAVE2 4
+
+#define LED3 7
+#define LLAVE3 6
+
+#define LED4 9
+#define LLAVE4 8
+
+int LLAVE_NUM1 = 0;
+int LLAVE_NUM2 = 0;
+int LLAVE_NUM3 = 0;
+int LLAVE_NUM4 = 0;
+
+void setup()
+{
+  pinMode(LED,OUTPUT);
+  pinMode(LLAVE,INPUT_PULLUP);
+  pinMode(LED2,OUTPUT);
+  pinMode(LLAVE2,INPUT_PULLUP);
+  pinMode(LED3,OUTPUT);
+  pinMode(LLAVE3,INPUT_PULLUP);
+  pinMode(LED4,OUTPUT);
+  pinMode(LLAVE4,INPUT_PULLUP);
+
+
+  Serial.begin(300);
+}
+
+void loop()
+{
+  ScanLLAVE();
+  ScanLLAVE2();
+  ScanLLAVE3();
+  ScanLLAVE4();
+}
+
+//bonton 1
+void ScanLLAVE()
+{
+  LLAVE_NUM1 = 0;
+  
+  if(digitalRead(LLAVE)==LOW)
+  {
+    delay(20);
+    if(digitalRead(LLAVE)==LOW)
+    {
+      LLAVE_NUM1 = 1;
+      while(digitalRead(LLAVE)==LOW);
+    }
+    Serial.println(digitalRead(LED));
+  }
+  
+  if(LLAVE_NUM1 == 1)
+  {
+    digitalWrite(LED,!digitalRead(LED));
+  }
+}
+
+//bonton 2
+void ScanLLAVE2()
+{
+  LLAVE_NUM2 = 0;
+  
+  if(digitalRead(LLAVE2)==LOW)
+  {
+    delay(20);
+    if(digitalRead(LLAVE2)==LOW)
+    {
+      LLAVE_NUM2 = 1;
+      while(digitalRead(LLAVE2)==LOW);
+    }
+    Serial.println(digitalRead(LED2));
+  }
+  
+  if(LLAVE_NUM2 == 1)
+  {
+    digitalWrite(LED2,!digitalRead(LED2));
+  }
+}
+
+//bonton 3
+void ScanLLAVE3()
+{
+  LLAVE_NUM3 = 0;
+  
+  if(digitalRead(LLAVE3)==LOW)
+  {
+    delay(20);
+    if(digitalRead(LLAVE3)==LOW)
+    {
+      LLAVE_NUM3 = 1;
+      while(digitalRead(LLAVE3)==LOW);
+    }
+    Serial.println(digitalRead(LED3));
+  }
+  
+  if(LLAVE_NUM3 == 1)
+  {
+    digitalWrite(LED3,!digitalRead(LED3));
+  }
+}
+
+//bonton 4
+void ScanLLAVE4()
+{
+  LLAVE_NUM4 = 0;
+  
+  if(digitalRead(LLAVE4)==LOW)
+  {
+    delay(20);
+    if(digitalRead(LLAVE4)==LOW)
+    {
+      LLAVE_NUM4 = 1;
+      while(digitalRead(LLAVE4)==LOW);
+    }
+    Serial.println(digitalRead(LED4));
+  }
+  
+  if(LLAVE_NUM4 == 1)
+  {
+    digitalWrite(LED4,!digitalRead(LED4));
+  }
+}
