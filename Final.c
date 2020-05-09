@@ -20,11 +20,10 @@ void introduccion_del_equipo (char []); //Se introduce el nombre del grupo aqui
 
 int main(void) 
 {
-	int salida_bucle_main = 0;
+
 	int estado_explosion = 0;
 	int bote_funcion_principal=0;
-	char opcion;
-	int seguir_jugando;
+	char seguir_jugando;
 	char nombre_del_grupo[N]; 
 	
 	
@@ -102,11 +101,25 @@ int main(void)
 	    
 	    printf("\n\nEl equipo %s se ha llevado un bote final de %d euros.\n",nombre_del_grupo,bote_funcion_principal);
 	    
-		printf("\nVolver a jugar?\n 1- Si.  2- No.\n");
+	    fflush(stdin); //Se limpia el buffer del teclado antes de preguntar si quiere seguir
+	    
+		printf("\nVolver a jugar?\n 'S'- Si.  'N'- No.\n");
+		scanf("%c",&seguir_jugando);
 		
-	    scanf("%d",&seguir_jugando);
-		 
-	} while(seguir_jugando==1);
+		do
+		{
+		    if (seguir_jugando!='s' && seguir_jugando!='S' && seguir_jugando!='n' && seguir_jugando!='N')
+		    {
+			    printf ("Dicha opcion no existe. Intentalo de nuevo: ");
+			    printf ("\n");
+				fflush(stdin);
+			    scanf("%c",&seguir_jugando);
+		    }
+	    }while(seguir_jugando!='s' && seguir_jugando!='S' && seguir_jugando!='n' && seguir_jugando!='N');
+    } while(seguir_jugando=='s' || seguir_jugando=='S');
+    
+	printf ("\n\n\n<<<====================>>>\n\n\n");
+    printf ("GRACIAS POR JUGAR!!!\n\n");
 	
 	return 0;
 }
@@ -150,8 +163,17 @@ int imprimir_pregunta (int *bote_paso_por_ref)
 	   {
 			printf ("Cuantos estados tiene EEUU?\n\n");
 			printf ("(A) 48 estados (B) 49 estados (C) 50 estados (D) 51 estados\n\n");
-			fflush (stdin);
-			scanf("%c",&opcion);
+			
+			do
+			{
+				fflush (stdin);
+			    scanf("%c",&opcion);
+			    if (opcion != 'a' && opcion != 'A' && opcion != 'b' && opcion != 'B' && opcion != 'c' && opcion != 'C' && opcion != 'd' && opcion != 'D')
+			    { 
+			        printf ("No existe dicha opcion.Intententalo de nuevo.\n\n");
+			    } 
+			}while (opcion != 'a' && opcion != 'A' && opcion != 'b' && opcion != 'B' && opcion != 'c' && opcion != 'C' && opcion != 'd' && opcion != 'D');
+			
 			switch (opcion)
 			{
 				case 'a':
@@ -181,7 +203,6 @@ int imprimir_pregunta (int *bote_paso_por_ref)
 				{
 				estado_explosion_funcion = 1;
 				printf("Opcion incorrecta"); break;
-			    }		
 			}break;
 		}break;
 			
@@ -189,8 +210,17 @@ int imprimir_pregunta (int *bote_paso_por_ref)
 	   {
 			printf ("De que anio es la Constitucion Espaniola?\n\n");
 	        printf ("(A) De 1978 (B) De 1979 (C) De 1888 (D) De 1798\n\n");
-	        fflush (stdin);
-	        scanf("%c",&opcion);
+	        
+	        do
+			{
+				fflush (stdin);
+			    scanf("%c",&opcion);
+			    if (opcion != 'a' && opcion != 'A' && opcion != 'b' && opcion != 'B' && opcion != 'c' && opcion != 'C' && opcion != 'd' && opcion != 'D')
+			    { 
+			        printf ("No existe dicha opcion.Intententalo de nuevo.\n\n");
+			    } 
+			}while (opcion != 'a' && opcion != 'A' && opcion != 'b' && opcion != 'B' && opcion != 'c' && opcion != 'C' && opcion != 'd' && opcion != 'D');
+			
 	        switch (opcion)
 			{
 				case 'a':
@@ -228,8 +258,17 @@ int imprimir_pregunta (int *bote_paso_por_ref)
 	   {
 	    	printf ("Quien escribio 'La Republica'?\n\n");
 	        printf ("(A) Socrate (B) Aristoteles (C) Tales de Mileto (D) Platon\n\n");
-	        fflush (stdin);
-	        scanf("%c",&opcion);
+	        
+	        do
+			{
+				fflush (stdin);
+			    scanf("%c",&opcion);
+			    if (opcion != 'a' && opcion != 'A' && opcion != 'b' && opcion != 'B' && opcion != 'c' && opcion != 'C' && opcion != 'd' && opcion != 'D')
+			    { 
+			        printf ("No existe dicha opcion.Intententalo de nuevo.\n\n");
+			    } 
+			}while (opcion != 'a' && opcion != 'A' && opcion != 'b' && opcion != 'B' && opcion != 'c' && opcion != 'C' && opcion != 'd' && opcion != 'D');
+	        
 	        switch (opcion)
 			{
 				case 'a':
@@ -267,8 +306,17 @@ int imprimir_pregunta (int *bote_paso_por_ref)
 	   {
 		    printf ("Cual es la isla mas grande del mundo?\n\n");
 	        printf ("(A) Groenlandia (B) Islas Canarias (C) Hawaii (D) Bali\n\n");
-	        fflush (stdin);
-	        scanf("%c",&opcion);
+	        
+	        	do
+			{
+				fflush (stdin);
+			    scanf("%c",&opcion);
+			    if (opcion != 'a' && opcion != 'A' && opcion != 'b' && opcion != 'B' && opcion != 'c' && opcion != 'C' && opcion != 'd' && opcion != 'D')
+			    { 
+			        printf ("No existe dicha opcion.Intententalo de nuevo.\n\n");
+			    } 
+			}while (opcion != 'a' && opcion != 'A' && opcion != 'b' && opcion != 'B' && opcion != 'c' && opcion != 'C' && opcion != 'd' && opcion != 'D');
+	        
 	        switch (opcion)
 		   {
 				case 'a':
@@ -306,8 +354,17 @@ int imprimir_pregunta (int *bote_paso_por_ref)
 		{
 		    printf ("En que guerra participo Juana de Arco?\n\n");
 	        printf ("(A) Segunda Guerra Mundial (B) La guerra de los 100 anios (C) La guerra de los 70 anios (D) Primera Guerra Mundial\n\n");
-	        fflush (stdin);
-	        scanf("%c",&opcion);
+	        
+	        do
+			{
+				fflush (stdin);
+			    scanf("%c",&opcion);
+			    if (opcion != 'a' && opcion != 'A' && opcion != 'b' && opcion != 'B' && opcion != 'c' && opcion != 'C' && opcion != 'd' && opcion != 'D')
+			    { 
+			        printf ("No existe dicha opcion.Intententalo de nuevo.\n\n");
+			    } 
+			}while (opcion != 'a' && opcion != 'A' && opcion != 'b' && opcion != 'B' && opcion != 'c' && opcion != 'C' && opcion != 'd' && opcion != 'D');
+	        
 	        switch (opcion)
 			{
 				case 'a':
@@ -346,8 +403,17 @@ int imprimir_pregunta (int *bote_paso_por_ref)
 	    {
 		    printf ("Cuando llego el primer hombre a la Luna?\n\n");
 	        printf ("(A) 1999 (B) 1969 (C) 1949 (D) 1966\n\n");
-	        fflush (stdin);
-	        scanf("%c",&opcion);
+	        
+	        do
+			{
+				fflush (stdin);
+			    scanf("%c",&opcion);
+			    if (opcion != 'a' && opcion != 'A' && opcion != 'b' && opcion != 'B' && opcion != 'c' && opcion != 'C' && opcion != 'd' && opcion != 'D')
+			    { 
+			        printf ("No existe dicha opcion.Intententalo de nuevo.\n\n");
+			    } 
+			}while (opcion != 'a' && opcion != 'A' && opcion != 'b' && opcion != 'B' && opcion != 'c' && opcion != 'C' && opcion != 'd' && opcion != 'D');
+	        
 	        switch (opcion)
 			{
 				case 'a':
@@ -385,8 +451,17 @@ int imprimir_pregunta (int *bote_paso_por_ref)
 	    {
 		    printf ("En que anio se creo la WORLD WIDE WEB?\n\n");
 	        printf ("(A) 1990 (B) 1899 (C) 1991 (D) 1980\n\n");
-	        fflush (stdin);
-	        scanf("%c",&opcion);
+	        
+	        do
+			{
+				fflush (stdin);
+			    scanf("%c",&opcion);
+			    if (opcion != 'a' && opcion != 'A' && opcion != 'b' && opcion != 'B' && opcion != 'c' && opcion != 'C' && opcion != 'd' && opcion != 'D')
+			    { 
+			        printf ("No existe dicha opcion.Intententalo de nuevo.\n\n");
+			    } 
+			}while (opcion != 'a' && opcion != 'A' && opcion != 'b' && opcion != 'B' && opcion != 'c' && opcion != 'C' && opcion != 'd' && opcion != 'D');
+	        
 	        switch (opcion)
 			{
 				case 'a':
@@ -425,8 +500,17 @@ int imprimir_pregunta (int *bote_paso_por_ref)
 	    {
 		    printf ("Cual es el idioma mas hablado del mundo?\n\n");
 	        printf ("(A) Ingles (B) Frances (C) Espaniol (D) Chino mandarin\n\n");
-	        fflush (stdin);
-	        scanf("%c",&opcion);
+	        
+	        do
+			{
+				fflush (stdin);
+			    scanf("%c",&opcion);
+			    if (opcion != 'a' && opcion != 'A' && opcion != 'b' && opcion != 'B' && opcion != 'c' && opcion != 'C' && opcion != 'd' && opcion != 'D')
+			    { 
+			        printf ("No existe dicha opcion.Intententalo de nuevo.\n\n");
+			    } 
+			}while (opcion != 'a' && opcion != 'A' && opcion != 'b' && opcion != 'B' && opcion != 'c' && opcion != 'C' && opcion != 'd' && opcion != 'D');
+	        
 	        switch (opcion)
 			{
 				case 'a':
@@ -465,8 +549,17 @@ int imprimir_pregunta (int *bote_paso_por_ref)
 		{
 		    printf ("Donde se encuentra el desierto de Gobi?\n\n");
 	        printf ("(A) Africa (B) Europa (C) Asia (D) America del norte\n\n");
-	        fflush (stdin);
-	        scanf("%c",&opcion);
+	        
+	        do
+			{
+				fflush (stdin);
+			    scanf("%c",&opcion);
+			    if (opcion != 'a' && opcion != 'A' && opcion != 'b' && opcion != 'B' && opcion != 'c' && opcion != 'C' && opcion != 'd' && opcion != 'D')
+			    { 
+			        printf ("No existe dicha opcion.Intententalo de nuevo.\n\n");
+			    } 
+			}while (opcion != 'a' && opcion != 'A' && opcion != 'b' && opcion != 'B' && opcion != 'c' && opcion != 'C' && opcion != 'd' && opcion != 'D');
+	        
 	        switch (opcion)
 			{
 				case 'a':
@@ -505,8 +598,17 @@ int imprimir_pregunta (int *bote_paso_por_ref)
 	    {
 		    printf ("En que anio fue asesinado John F. Kennedy?\n\n");
 	        printf ("(A) 1978 (B) 1963 (C) 1888 (D) 1949\n\n");
-	        fflush (stdin);
-	        scanf("%c",&opcion);
+	        
+	        do
+			{
+				fflush (stdin);
+			    scanf("%c",&opcion);
+			    if (opcion != 'a' && opcion != 'A' && opcion != 'b' && opcion != 'B' && opcion != 'c' && opcion != 'C' && opcion != 'd' && opcion != 'D')
+			    { 
+			        printf ("No existe dicha opcion.Intententalo de nuevo.\n\n");
+			    } 
+			}while (opcion != 'a' && opcion != 'A' && opcion != 'b' && opcion != 'B' && opcion != 'c' && opcion != 'C' && opcion != 'd' && opcion != 'D');
+	        
 	        switch (opcion)
 			{
 				case 'a':
@@ -545,8 +647,17 @@ int imprimir_pregunta (int *bote_paso_por_ref)
 	   {
 		    printf ("Quien fue el primer presidente de EEUU?\n\n");
 	        printf ("(A) George Washington (B) Donald Trump (C) John Adams (D) Thomas Jefferson\n\n");
-	        fflush (stdin);
-	        scanf("%c",&opcion);
+	        
+	        do
+			{
+				fflush (stdin);
+			    scanf("%c",&opcion);
+			    if (opcion != 'a' && opcion != 'A' && opcion != 'b' && opcion != 'B' && opcion != 'c' && opcion != 'C' && opcion != 'd' && opcion != 'D')
+			    { 
+			        printf ("No existe dicha opcion.Intententalo de nuevo.\n\n");
+			    } 
+			}while (opcion != 'a' && opcion != 'A' && opcion != 'b' && opcion != 'B' && opcion != 'c' && opcion != 'C' && opcion != 'd' && opcion != 'D');
+	        
 	        switch (opcion)
 			{
 				case 'a':
@@ -586,8 +697,17 @@ int imprimir_pregunta (int *bote_paso_por_ref)
 	   {
 		    printf ("En que anio se desolvio la URSS?\n\n");
 	        printf ("(A) 1991 (B) 1990 (C) 1997 (D) 1989\n\n");
-	        fflush (stdin);
-	        scanf("%c",&opcion);
+	        
+	        do
+			{
+				fflush (stdin);
+			    scanf("%c",&opcion);
+			    if (opcion != 'a' && opcion != 'A' && opcion != 'b' && opcion != 'B' && opcion != 'c' && opcion != 'C' && opcion != 'd' && opcion != 'D')
+			    { 
+			        printf ("No existe dicha opcion.Intententalo de nuevo.\n\n");
+			    } 
+			}while (opcion != 'a' && opcion != 'A' && opcion != 'b' && opcion != 'B' && opcion != 'c' && opcion != 'C' && opcion != 'd' && opcion != 'D');
+	        
 	        switch (opcion)
 			{
 				case 'a':
@@ -627,8 +747,17 @@ int imprimir_pregunta (int *bote_paso_por_ref)
        {
 		    printf ("Quien fue padre de la bomba atomica?\n\n");
 	        printf ("(A) A.Einstein (B) Robert Oppenheimer (C) Hans Bethe (D) Juri Jariton\n\n");
-	        fflush (stdin);
-	        scanf("%c",&opcion);
+	        
+	        do
+			{
+				fflush (stdin);
+			    scanf("%c",&opcion);
+			    if (opcion != 'a' && opcion != 'A' && opcion != 'b' && opcion != 'B' && opcion != 'c' && opcion != 'C' && opcion != 'd' && opcion != 'D')
+			    { 
+			        printf ("No existe dicha opcion.Intententalo de nuevo.\n\n");
+			    } 
+			}while (opcion != 'a' && opcion != 'A' && opcion != 'b' && opcion != 'B' && opcion != 'c' && opcion != 'C' && opcion != 'd' && opcion != 'D');
+	        
 	        switch (opcion)
 			{
 				case 'a':
@@ -669,8 +798,17 @@ int imprimir_pregunta (int *bote_paso_por_ref)
 	   {
 		    printf ("Cual es la capital de Filipinas?\n\n");
 	        printf ("(A) Kabul (B) Luanda (C) Manila (D) Daca\n\n");
-	        fflush (stdin);
-	        scanf("%c",&opcion);
+	        
+	        do
+			{
+				fflush (stdin);
+			    scanf("%c",&opcion);
+			    if (opcion != 'a' && opcion != 'A' && opcion != 'b' && opcion != 'B' && opcion != 'c' && opcion != 'C' && opcion != 'd' && opcion != 'D')
+			    { 
+			        printf ("No existe dicha opcion.Intententalo de nuevo.\n\n");
+			    } 
+			}while (opcion != 'a' && opcion != 'A' && opcion != 'b' && opcion != 'B' && opcion != 'c' && opcion != 'C' && opcion != 'd' && opcion != 'D');
+	        
 	        switch (opcion)
 			{
 				case 'a':
@@ -711,8 +849,17 @@ int imprimir_pregunta (int *bote_paso_por_ref)
 	   {
 		    printf ("En que anio empezo la invasion arabe en Espania?\n\n");
 	        printf ("(A) 632 (B) 711 (C) 1042 (D) 712\n\n");
-	        fflush (stdin);
-	        scanf("%c",&opcion);
+	        
+	        do
+			{
+				fflush (stdin);
+			    scanf("%c",&opcion);
+			    if (opcion != 'a' && opcion != 'A' && opcion != 'b' && opcion != 'B' && opcion != 'c' && opcion != 'C' && opcion != 'd' && opcion != 'D')
+			    { 
+			        printf ("No existe dicha opcion.Intententalo de nuevo.\n\n");
+			    } 
+			}while (opcion != 'a' && opcion != 'A' && opcion != 'b' && opcion != 'B' && opcion != 'c' && opcion != 'C' && opcion != 'd' && opcion != 'D');
+	        
 	        switch (opcion)
 			{
 				case 'a':
@@ -749,8 +896,14 @@ int imprimir_pregunta (int *bote_paso_por_ref)
 			    }	
 		    }break;
 		}break;
-	}
-	
-	return (estado_explosion_funcion);
-	
+   }
+  }
+  return (estado_explosion_funcion);
 }
+	
+	
+	
+
+
+
+
