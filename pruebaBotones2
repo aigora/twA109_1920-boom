@@ -38,7 +38,7 @@ void loop()
   ScanLLAVE4();
 }
 
-//bonton 1
+//boton 1
 void ScanLLAVE()
 {
   LLAVE_NUM1 = 0;
@@ -60,7 +60,7 @@ void ScanLLAVE()
   }
 }
 
-//bonton 2
+//boton 2
 void ScanLLAVE2()
 {
   LLAVE_NUM2 = 0;
@@ -82,7 +82,7 @@ void ScanLLAVE2()
   }
 }
 
-//bonton 3
+//boton 3
 void ScanLLAVE3()
 {
   LLAVE_NUM3 = 0;
@@ -104,7 +104,7 @@ void ScanLLAVE3()
   }
 }
 
-//bonton 4
+//boton 4
 void ScanLLAVE4()
 {
   LLAVE_NUM4 = 0;
