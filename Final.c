@@ -128,7 +128,7 @@ int main(void)
 void introduccion_del_equipo (char nombre_grupo[])
 {
 	fflush(stdin);
-	printf("Introduzca el nombre de su equipo:");
+	printf("Introduzca el nombre de su equipo: ");
     fgets (nombre_grupo,100,stdin);
     printf("El nombre seleccionado es %s.\n\n\n",nombre_grupo);
     printf ("<<<====================>>>\n\n\n");
