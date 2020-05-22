@@ -694,7 +694,7 @@ int imprimir_pregunta (int *bote_paso_por_ref)
 		    
 	    case 11:
 	   {
-		    printf ("En que anyo se desolvio la URSS?\n\n");
+		    printf ("En que anyo se disolvio la URSS?\n\n");
 	        printf ("(A) 1991 (B) 1990 (C) 1997 (D) 1989\n\n");
 	        
 	        do
