@@ -151,7 +151,7 @@ void explosion_bomba_funcion (void)
 int imprimir_pregunta (int *bote_paso_por_ref)
 {
 	int n;
-	int estado_explosion_funcion = 0; // Este valor se devuelve de la funcon; controla el estado de la bomba
+	int estado_explosion_funcion = 0; // Este valor se devuelve de la funcion; controla el estado de la bomba
 	srand(time(NULL)); // Se randomiza la variable n en funcion del tiempo de tu PC
 	n = rand() % 15;
 	char opcion; // Variable para coger las letras de las respuestas
