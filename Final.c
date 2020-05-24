@@ -29,10 +29,10 @@ int main(void)
 	
 	printf("Bienvenido a Boom!\n\n\n");
 	printf ("<<<====================>>>\n\n\n");
-    do
-    {
+   
         introduccion_del_equipo (nombre_del_grupo);
-	
+	 do
+    	{
 	    //Primera pregunta
 	
 	    printf ("Primera pregunta: \n");
@@ -129,7 +129,7 @@ void introduccion_del_equipo (char nombre_grupo[])
 {
 	fflush(stdin);
 	printf("Introduzca el nombre de su equipo: ");
-    fgets (nombre_grupo,100,stdin);
+    gets (nombre_grupo);
     printf("El nombre seleccionado es %s.\n\n\n",nombre_grupo);
     printf ("<<<====================>>>\n\n\n");
 	fflush(stdin);
