@@ -1,9 +1,9 @@
 #include <stdlib.h>
 #include <stdio.h>
-#define N 100
 #include <string.h>
 #include "SerialPort.h"
 
+#define N 100
 #define MAX_DATA_LENGTH 255
 
 /*
@@ -21,7 +21,7 @@ void sentencia_final (int *,char []); //Se finaliza el juego con esta sentencia
 
 void introduccion_del_equipo (char []); //Se introduce el nombre del grupo
 
-void autoConectar(SerialPort arduino, char); //Funcion prototipo
+void autoConectar(SerialPort *arduino, char *); //Funcion prototipo
 
 
 int main(void) 
@@ -50,10 +50,10 @@ int main(void)
 	
 	printf("Bienvenido a Boom!\n\n\n");
 	printf ("<<<====================>>>\n\n\n");
-    do
-    {
+    
         introduccion_del_equipo (nombre_del_grupo);
-	
+	do
+    {
 	    //Primera pregunta
 	
 	    printf ("Primera pregunta: \n");
@@ -150,7 +150,7 @@ void introduccion_del_equipo (char nombre_grupo[])
 {
 	fflush(stdin);
 	printf("Introduzca el nombre de su equipo: ");
-    fgets (nombre_grupo,100,stdin);
+    gets (nombre_grupo);
     printf("El nombre seleccionado es %s.\n\n\n",nombre_grupo);
     printf ("<<<====================>>>\n\n\n");
 	fflush(stdin);
@@ -922,7 +922,7 @@ int imprimir_pregunta (int *bote_paso_por_ref)
 }
 
 
-void autoConectar (SerialPort *arduino,char *incomingData)
+void autoConectar (SerialPort *arduino, char *incomingData)
  {
   char sendData = 0;
  
@@ -938,7 +938,7 @@ void autoConectar (SerialPort *arduino,char *incomingData)
    printf ("Conectado con Arduino en el puerto %s\n",arduino->portName);
    
  // Bucle de la aplicaci¨®n
-   printf ("0 - boton4 on, 1 - bonton1,2,3 ON, 9 - SALIR");
+   printf ("0 - boton 4 on\n1 - boton 1,2,3 ON\n9 - SALIR\n\n");
    while (isConnected(arduino) && sendData!='9') 
    {
    	sendData = getch();
