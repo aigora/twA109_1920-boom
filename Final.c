@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #define N 100
 
-//Este código en C no cuenta con las funciones asociadas a Arduino
+//Este código en C no cuenta con las funciones asociadas a Arduino (mirar archivo partedec.c)
 
 /*
 0-La bomba explota
