@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #define N 100
 
+//Este código en C no cuenta con las funciones asociadas a Arduino
+
 /*
 0-La bomba explota
 1-No hay explosion 
