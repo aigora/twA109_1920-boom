@@ -926,18 +926,18 @@ void autoConectar (SerialPort *arduino, char *incomingData)
  {
   char sendData = 0;
  
-  // Espera la conexi¨®n con Arduino 
+  // Espera la conexión con Arduino 
    while (!isConnected(arduino))
    {
    	Sleep(100);
     Crear_Conexion(arduino,arduino->portName);
    }
    
- //Comprueba si arduino est¨¢ connectado
+ //Comprueba si arduino está connectado
    if (isConnected(arduino))
    printf ("Conectado con Arduino en el puerto %s\n",arduino->portName);
    
- // Bucle de la aplicaci¨®n
+ // Bucle de la aplicación
    printf ("0 - boton 4 on\n1 - boton 1,2,3 ON\n9 - SALIR\n\n");
    while (isConnected(arduino) && sendData!='9') 
    {
@@ -945,5 +945,5 @@ void autoConectar (SerialPort *arduino, char *incomingData)
     writeSerialPort(arduino,&sendData, sizeof(char));
    }
    if (!isConnected(arduino))
-       printf ("Se ha perdido la conexi¨®n con Arduino\n");
+       printf ("Se ha perdido la conexion con Arduino\n");
 }
